@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 const baseUrl = 'https://swapi.dev/api';
 
@@ -9,11 +10,11 @@ const baseUrl = 'https://swapi.dev/api';
 export class SwapiService {
   constructor(private http: HttpClient) {}
 
-  getShips(): Promise<any> {
-    return this.http.get(`${baseUrl}/starships`).toPromise();
+  getShips(): Observable<any> {
+    return this.http.get(`${baseUrl}/starships`);
   }
 
-  getPilots(): Promise<any> {
-    return this.http.get(`${baseUrl}/people`).toPromise();
+  getPilot(url: string): Promise<any> {
+    return this.http.get(url).toPromise();
   }
 }

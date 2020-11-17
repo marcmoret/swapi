@@ -1,9 +1,45 @@
 <div class="container">
-  <div class="row">
-    <div>
-      <div class="col-4">test</div>
-      <div class="col-4">test</div>
-      <div class="col-4">test</div>
+  <div class="flex-row">
+    <div class="col-sm-6">
+      <ul>
+        <li *ngFor="let ship of starShips; let i = index">
+          <button class="btn btn-light shipButton" (click)="onShipSelected(i)">
+            {{ ship?.name }}
+          </button>
+          <ul *ngIf="visibleIndex === i">
+            <li>Cargo Capacity: {{ ship?.cargo_capacity }}</li>
+            <li>Manufacturer: {{ ship?.manufacturer }}</li>
+            <li>Consumables: {{ ship?.consumables }}</li>
+            <li>Cost: {{ ship?.cost_in_credits }}</li>
+            <li>Max Atmosphere: {{ ship?.max_atmosphering_speed }}</li>
+            <li *ngIf="ship?.pilots.length > 0">
+              Pilots:
+              <ul *ngFor="let pilot of ship?.pilots">
+                <li>
+                  <button
+                    (click)="onPilotSelected(pilot)"
+                    type="button"
+                    class="btn btn-link"
+                  >
+                    {{ pilot }}
+                  </button>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="col-sm-6">
+      <ul>
+        <ng-container *ngFor="let pilot of pilots">
+          <li *ngIf="visiblePilot === pilot.url">
+            <ng-container>
+              {{ pilot?.name }}
+            </ng-container>
+          </li>
+        </ng-container>
+      </ul>
     </div>
   </div>
 </div>
