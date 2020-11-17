@@ -43,6 +43,7 @@ export class StarWarsComponent implements OnInit, OnDestroy {
 
   onShipSelected(index: number) {
     this.visibleIndex = index;
+    this.visiblePilot = '';
   }
 
   onPilotSelected(url: string) {
