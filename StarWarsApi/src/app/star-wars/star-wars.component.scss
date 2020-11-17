@@ -1,3 +1,5 @@
+$starwars: "<a href='https://icons8.com/icon/48390/darth-vader'>Darth Vader icon by Icons8</a>";
+
 .shipButton {
     margin: 1%;
 }
@@ -19,3 +21,18 @@
     border-right: 1px solid lightgray;
     border-bottom: 1px solid lightgray;
 }
+
+.first-list {
+    list-style: none;
+    padding: 0;
+  }
+  .first-list-li {
+    padding-left: 1.3em;
+  }
+  .first-list-li:before {
+    content: "\f50e"; /* FontAwesome Unicode */
+    font-family: FontAwesome;
+    display: inline-block;
+    margin-left: -1.3em; /* same as padding-left set on li */
+    width: 1.3em; /* same as padding-left set on li */
+  }
