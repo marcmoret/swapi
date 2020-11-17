@@ -6,8 +6,6 @@ export class UrlPipe implements PipeTransform {
     const found = pilots.find((x) => {
       return x.url === url;
     });
-    console.log(found.name);
-
     return found.name;
   }
 }
