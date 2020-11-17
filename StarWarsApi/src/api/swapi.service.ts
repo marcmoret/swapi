@@ -14,7 +14,7 @@ export class SwapiService {
     return this.http.get(`${baseUrl}/starships`);
   }
 
-  getPilot(url: string): Promise<any> {
-    return this.http.get(url).toPromise();
+  getPilot(url: string): Observable<any> {
+    return this.http.get(url);
   }
 }

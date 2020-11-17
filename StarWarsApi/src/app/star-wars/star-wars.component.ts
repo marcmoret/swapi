@@ -17,17 +17,16 @@ export class StarWarsComponent implements OnInit, OnDestroy {
   constructor(private readonly swapiService: SwapiService) {}
 
   ngOnInit() {
+    // Retrieve the ships on first API call.
     this.subsink.add(
       this.swapiService.getShips().subscribe((response) => {
         this.starShips = response.results;
         this.starShips.forEach((ship) => {
-          // console.log(ship);
-
           // tslint:disable-next-line:whitespace
           if (ship.pilots?.length > 0) {
             ship.pilots.forEach((element) => {
-              this.swapiService.getPilot(element).then((pilot) => {
-                console.log('Pilot:', pilot);
+              // Then we we loop through all the ships that have pilots, and retrieve them also
+              this.swapiService.getPilot(element).subscribe((pilot) => {
                 this.pilots.push(pilot);
               });
             });
@@ -41,14 +40,14 @@ export class StarWarsComponent implements OnInit, OnDestroy {
     this.subsink.unsubscribe();
   }
 
+  // Set the index to know which ship to show details and reset the visible pilot
   onShipSelected(index: number) {
     this.visibleIndex = index;
     this.visiblePilot = '';
   }
 
+  // Set the pilot to know which pilot to show;
   onPilotSelected(url: string) {
-    console.log(url);
-
     this.visiblePilot = url;
   }
 }

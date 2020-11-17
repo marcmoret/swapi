@@ -1,3 +1,4 @@
+import { UrlPipe } from './../url.pipe';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -7,7 +8,7 @@ import { StarWarsComponent } from './star-wars/star-wars.component';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [AppComponent, StarWarsComponent],
+  declarations: [AppComponent, StarWarsComponent, UrlPipe],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
