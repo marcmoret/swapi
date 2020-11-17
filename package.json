@@ -1,0 +1,22 @@
+{
+  "name": "swapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcmoret/swapi.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marcmoret/swapi/issues"
+  },
+  "homepage": "https://github.com/marcmoret/swapi#readme",
+  "dependencies": {
+    "bootstrap": "^4.5.3"
+  }
+}
