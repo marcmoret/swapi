@@ -1,6 +1,6 @@
 <div class="container">
   <div class="flex-row">
-    <div class="col-sm-6">
+    <div class="col-sm-6 first-col">
       <ul>
         <li *ngFor="let ship of starShips; let i = index">
           <button class="btn btn-light shipButton" (click)="onShipSelected(i)">
@@ -30,7 +30,7 @@
         </li>
       </ul>
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-6 second-col" [class.second-col]="visiblePilot">
       <ul>
         <ng-container *ngFor="let pilot of pilots">
           <ng-container *ngIf="visiblePilot === pilot.url">

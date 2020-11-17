@@ -11,7 +11,7 @@ export class StarWarsComponent implements OnInit, OnDestroy {
   starShips: Array<any> = [];
   pilots: Array<any> = [];
   subsink = new SubSink();
-  visiblePilot: string;
+  visiblePilot = null;
   visibleIndex: number;
 
   constructor(private readonly swapiService: SwapiService) {}
@@ -43,7 +43,7 @@ export class StarWarsComponent implements OnInit, OnDestroy {
   // Set the index to know which ship to show details and reset the visible pilot
   onShipSelected(index: number) {
     this.visibleIndex = index;
-    this.visiblePilot = '';
+    this.visiblePilot = null;
   }
 
   // Set the pilot to know which pilot to show;
